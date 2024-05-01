@@ -1,5 +1,11 @@
 import { products } from "../data/products.js";
 import { cart, removeFromCart } from "../data/cart.js";
+import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+
+let date = dayjs();
+let deliveryDate = date.add(7, 'days');
+console.log(deliveryDate.format('dddd, MMMM 0'));
+
 
 let cartSummaryHTML ='';
 
