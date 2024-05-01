@@ -3,6 +3,8 @@ import { addToCart, cart } from "../data/cart.js";
 
 let productsHTML = '';
 
+updateCartQuantity()
+
 products.forEach((product)=>{
   productsHTML+=
   `
