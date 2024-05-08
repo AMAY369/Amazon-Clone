@@ -1,3 +1,4 @@
+import { renderPaymentSummary } from "../scripts/checkout/paymentSummary.js";
 import { deliveryOptions } from "./deliveryOptions.js";
 
 export let cart = JSON.parse(localStorage.getItem('cart')) || [{
@@ -59,6 +60,7 @@ export function updateDeliveryOption(productId, deliveryOptionId){
     });
   
   matchingItem.deliveryOptionId = deliveryOptionId;
+  renderPaymentSummary();
 
   saveToStorage();
 }
