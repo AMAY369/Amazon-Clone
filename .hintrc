@@ -22,6 +22,7 @@
         "select-name": "off",
         "label": "off"
       }
-    ]
+    ],
+    "meta-viewport": "off"
   }
 }
