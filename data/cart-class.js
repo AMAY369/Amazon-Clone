@@ -2,15 +2,15 @@ import { renderPaymentSummary } from "../scripts/checkout/paymentSummary.js";
 
 class Cart {
   cartItems;
-  localStorageKey;
+  #localStorageKey;
 
   constructor(localStorageKey){
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage(){
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey)) || [{
+  #loadFromStorage(){
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey)) || [{
       productId: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
       quantity:2,
       deliveryOptionId: '1'
@@ -52,7 +52,7 @@ class Cart {
   }
 
   saveToStorage(){
-    localStorage.setItem(this.localStorageKey,JSON.stringify(this.cartItems));
+    localStorage.setItem(this.#localStorageKey,JSON.stringify(this.cartItems));
   }
 
   updateDeliveryOption(productId, deliveryOptionId){
