@@ -1,9 +1,8 @@
-import { getProduct, products } from "../../data/products.js";
+import { getProduct } from "../../data/products.js";
 import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
-
 export function renderOrderSummary(){
 
   let cartSummaryHTML ='';
@@ -34,17 +33,17 @@ export function renderOrderSummary(){
         <div class="product-name">
           ${matchingProduct.name}
         </div>
-        <div class="product-price">
-        &#8377;${matchingProduct.price}
+        <div class="product-price">${matchingProduct.getPrice()}
         </div>
-        <div class="product-quantity">
+        <div class="product-quantity ja-product-quantity-${matchingProduct.id}">
           <span>
             Quantity: <span class="quantity-label">${cartItem.quantity}</span>
           </span>
           <span class="update-quantity-link link-primary">
             Update
           </span>
-          <span class="delete-quantity-link link-primary js-delete-quantity-link" data-product-id="${matchingProduct.id}">
+          <span class="delete-quantity-link link-primary js-delete-quantity-link-${matchingProduct.id}"
+          data-product-id="${matchingProduct.id}">
             Delete
           </span>
         </div>
