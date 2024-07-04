@@ -26,7 +26,7 @@ products.forEach((product)=>{
     </div>
   </div>
 
-  <div class="product-price">${product.getPrice()}
+  <div class="product-price">&#8377;${product.getPrice()}
   </div>
 
   <div class="product-quantity-container">
@@ -43,6 +43,10 @@ products.forEach((product)=>{
       <option value="10">10</option>
     </select>
   </div>
+
+  ${
+    product.extraInfoHTML()
+  }
 
   <div class="product-spacer"></div>
 
