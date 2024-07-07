@@ -76,7 +76,7 @@ class Clothing extends Product{
 
 export let products = [];
 
-export function loadProducts(fun){
+export function loadProducts(renderProductsGrid){
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', ()=>{
     products = JSON.parse(xhr.response).map((productDetails)=>{
@@ -85,7 +85,8 @@ export function loadProducts(fun){
       }
       return new Product(productDetails);
     });
-    fun();
+    console.log("Load Products")
+    renderProductsGrid();
   })
 
 
@@ -93,7 +94,7 @@ export function loadProducts(fun){
   xhr.send();
 }
 
-loadProducts()
+// loadProducts();
 
 // export const products = [
 //   {

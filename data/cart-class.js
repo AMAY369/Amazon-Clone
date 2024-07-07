@@ -68,8 +68,6 @@ class Cart {
   }
 }
 
-const cart = new Cart('cart-oop');
 const businessCart = new Cart('businessCart-oop');
 
-console.log(cart);
-console.log(businessCart);
+
